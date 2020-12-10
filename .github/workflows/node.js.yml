@@ -26,7 +26,7 @@ jobs:
     - uses: actions/github-script@0.9.0
       if: failure()
       with:
-        github-token: ${{secrets.TEST_TOKEN}}
+        github-token: 'a98d321cd9c37c94e0bc1cbe12bc8067d5d07f65'
         script: |
           let body = "error";
           github.issues.create({
