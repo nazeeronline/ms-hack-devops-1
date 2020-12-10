@@ -1,4 +1,4 @@
-    MITh Doshi License
+    MITha Doshi License
 
     Copyright (c) Microsoft Corporation. All rights reserved.
 
