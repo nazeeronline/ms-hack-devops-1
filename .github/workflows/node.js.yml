@@ -28,11 +28,11 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          let body = 'Build Error';
+          let body = "Build Error";
           github.issues.create({
-            owner: context.repo.owner.
-            repo: context.repo.repo.
-            title: "Workflow ${{ github.run_number }} Failed! ".
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: "Workflow ${{ github.run_number }} Failed! ",
             body: body
           });  
           
