@@ -30,9 +30,9 @@ jobs:
         script: |
           let body = "error";
           github. issues.create({
-            owner: context.repo. owner.
-            repo: context.repo. repo.
-            title: "$t env.buitename}} Workflow ${{ github.run_number }} Failed! ".
+            owner: context.repo.owner.
+            repo: context.repo.repo.
+            title: "Workflow ${{ github.run_number }} Failed! ".
             body: body
           });  
           
