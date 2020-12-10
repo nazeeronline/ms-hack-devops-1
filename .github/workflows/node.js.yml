@@ -2,6 +2,10 @@ name: Node.js CI
 
 on: [push]
 
+defaults:
+  run:
+    working-directory: apis/userprofile
+
 jobs:
   build:
 
