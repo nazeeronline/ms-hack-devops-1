@@ -33,7 +33,7 @@ Test('/user', function (t) {
          */
         t.test('test getAllUsers get operation', function (t) {
             Mockgen().requests({
-                path: '/user',
+                path: '/user2',
                 operation: 'get'
             }, function (err, mock) {
                 var request;
