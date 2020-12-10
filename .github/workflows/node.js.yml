@@ -26,9 +26,9 @@ jobs:
     - uses: actions/github-script@0.9.0
       if: failure()
       with:
-        github-token: 'a98d321cd9c37c94e0bc1cbe12bc8067d5d07f65'
+        github-token: ${{secrets.TEST_TOKEN}}
         script: |
-          let body = "error";
+          let body = 'Build Error';
           github.issues.create({
             owner: context.repo.owner.
             repo: context.repo.repo.
