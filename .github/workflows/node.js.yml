@@ -38,9 +38,9 @@ jobs:
  
     - uses: azure/docker-login@v1
       with:
-         login-server: ${{secrerts.AZ_CONTAINER_HOST}}
-         username: ${{secrerts.AZ_CONTAINER_USERNAME}}
-         password: ${{secrerts.AZ_CONTAINER_PWD}}
+         login-server: ${{secrets.AZ_CONTAINER_HOST}}
+         username: ${{secrets.AZ_CONTAINER_USERNAME}}
+         password: ${{secrets.AZ_CONTAINER_PWD}}
 
     - run: |
           docker build . -t openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v3
