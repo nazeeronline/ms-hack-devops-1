@@ -43,5 +43,11 @@ jobs:
          password: ${{secrets.AZ_CONTAINER_PWD}}
 
     - run: |
-          docker build . -t openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v3
-          docker push openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v3
+          docker build . -t openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4
+          docker push openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4
+          
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'openhackm2c9dk93userprofile'
+        publish-profile: ${{ secrets.AZ_PUBLISH_PROFILE }}
+        images: 'openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4'
