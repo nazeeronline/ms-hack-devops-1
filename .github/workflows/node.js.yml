@@ -45,9 +45,14 @@ jobs:
     - run: |
           docker build . -t openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4
           docker push openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4
-          
+    
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        enable-AzPSSession: true 
+      
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'openhackm2c9dk93userprofile'
-        publish-profile: ${{ secrets.AZ_PUBLISH_PROFILE }}
         images: 'openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4' 
