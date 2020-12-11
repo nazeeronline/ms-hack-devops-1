@@ -55,4 +55,5 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'openhackm2c9dk93userprofile'
+        slot-name: 'staging'
         images: 'openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v4' 
