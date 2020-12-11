@@ -38,11 +38,10 @@ jobs:
  
     - uses: azure/docker-login@v1
       with:
-         login-server: openhackm2c9dk93acr.azurecr.io
-         username: 'openhackm2c9dk93acr'
-         password: '3RNW0+MNIooRk24JFghyIkxNrH4AvlBK'
+         login-server: ${{secrerts.AZ_CONTAINER_HOST}}
+         username: ${{secrerts.AZ_CONTAINER_USERNAME}}
+         password: ${{secrerts.AZ_CONTAINER_PWD}}
 
     - run: |
-          docker build . -t openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v2
-          docker push openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v2
-  
+          docker build . -t openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v3
+          docker push openhackm2c9dk93acr.azurecr.io/devopsoh/api-userprofile:v3
